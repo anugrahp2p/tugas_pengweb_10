@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ReadingStatus {
+  rencana
+  sedang
+  selesai
+}
+
+model Book {
+  id        String        @id @default(uuid())
+  title     String
+  author    String
+  category  String        @default("Sastra")
+  year      Int
+  pages     Int           @default(0)
+  status    ReadingStatus @default(rencana)
+  coverUrl  String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@map("books")
+}

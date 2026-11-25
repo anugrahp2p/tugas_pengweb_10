@@ -1,0 +1,44 @@
+### REST Client (VS Code: ekstensi "REST Client"). Jalankan backend di :3001
+@host = http://localhost:3001
+
+### Daftar semua buku
+GET {{host}}/books
+
+### Filter (where): status / category / search
+GET {{host}}/books?status=sedang
+###
+GET {{host}}/books?category=Filsafat&search=tan
+
+### Statistik (count)
+GET {{host}}/books/stats
+
+### Tambah buku -> 201
+POST {{host}}/books
+Content-Type: application/json
+
+{
+  "title": "Sapiens",
+  "author": "Yuval Noah Harari",
+  "category": "Sejarah",
+  "year": 2011,
+  "pages": 443,
+  "status": "rencana"
+}
+
+### Satu buku (ganti ID)
+GET {{host}}/books/GANTI-DENGAN-ID
+
+### Ubah status -> 200
+PATCH {{host}}/books/GANTI-DENGAN-ID
+Content-Type: application/json
+
+{ "status": "selesai" }
+
+### Hapus -> 204
+DELETE {{host}}/books/GANTI-DENGAN-ID
+
+### Uji validasi -> 400
+POST {{host}}/books
+Content-Type: application/json
+
+{ "title": "", "foo": 1 }

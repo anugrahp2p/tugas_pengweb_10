@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-body: #f6f5f1;
+  --surface: #ffffff;
+  --surface-subtle: #faf9f6;
+  --border-subtle: #e5e3dc;
+  --border-strong: #cbc7bc;
+
+  --text-primary: #181a18;
+  --text-secondary: #525852;
+  --text-muted: #7c827c;
+
+  --brand-green: #1b4332;
+  --brand-green-hover: #133124;
+  --brand-green-soft: #eef5f1;
+  --brand-green-border: #cfe0d6;
+
+  --status-done-bg: #eef5f1;
+  --status-done-text: #1b4332;
+  --status-reading-bg: #fbf4e4;
+  --status-reading-text: #8a5607;
+  --status-planned-bg: #f1f2f0;
+  --status-planned-text: #4c524c;
+
+  --danger-red: #b91c1c;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
